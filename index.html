@@ -3,27 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Multi-Function Calculator & Statistics Tool</title>
+    <!-- Linked external CSS file -->
+    
 </head>
 <body>
-    <script src="js/saveText.js"></script>
-    <script src="js/readTextArea.js"></script>
 
-    <canvas id="canvas" width="320" height="240"></canvas>
+    <div class="container">
+        <!-- 1. Standard Calculator Panel -->
+        <div class="calculator">
+            <h3>Standard Calculator</h3>
+            <input type="text" id="display">
+            <div class="buttons">
+                <button class="zero" onclick="appendValue('0')">0</button>
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button class="operator" onclick="clearDisplay()">C</button>
+                <button class="operator" onclick="appendValue('/')">/</button>
+                <button class="operator" onclick="appendValue('*')">*</button>
+                <button class="operator" onclick="appendValue('-')">-</button>
+                <button class="operator" onclick="appendValue('+')">+</button>
 
-    <div class="calculator"></div>
+                <button onclick="appendValue('.')">.</button>
+               
+                <button class="equal" onclick="calculate()">=</button>
 
-    <input type="number" id="num1" name="quantity">
-    <input type="number" id="num2" name="quantity">
+            </div>
+        </div>
 
-    <input type="file" id="fileToLoad">
+        <!-- 2. Advanced Math & Text Input Panel -->
+        <div class="panel">
+            <h3>Math Class Operations</h3>
+            <input type="text" id="mathInput" class="text-input" placeholder="e.g. 5 or 4,3">
+            <div class="panel-buttons">
+                <button class="operator" onclick="runMathOperation('round')">Round</button>
+                <button class="operator" onclick="runMathOperation('pow')">Pow (x^y)</button>
+                <button class="operator" onclick="runMathOperation('sqrt')">Sqrt</button>
+                <button class="operator" onclick="runMathOperation('pi')">Multiply Pi</button>
+            </div>
+            <div id="mathResult" class="message-box" style="margin-top: 15px; font-weight: bold;">Result: </div>
+        </div>
 
-    <button class="button" onclick="checkFileProperty()">Load file</button>
+        <!-- file Upload & stat calculations panel -->
+        <div class="panel">
+            <h3>Statistics (File Upload)</h3>
+            <input type="file" id="fileToLoad" onchange="checkFileProperty()">
+            <div id="Message" class="message-box">Select a CSV/text file...</div>
+            <textarea id="fileInput" class="file-textarea" placeholder="Data loaded here..."></textarea>
+            <div class="panel-buttons">
+                <button class="operator" onclick="calculateStats('mean')">Mean</button>
+                <button class="operator" onclick="calculateStats('median')">Median</button>
+                <button class="operator" onclick="calculateStats('mode')">Mode</button>
+                <button class="operator" onclick="calculateStats('summary')">Min/Max</button>
+            </div>
+            <div id="statResult" class="message-box" style="margin-top: 10px; font-weight: bold;">Stat: </div>
+        </div>
+    </div>
 
-    <p id="Message"></p>
-
-    <textarea class="textinput" id="fileInput" cols="40" rows="2"></textarea>
-    
-</body>
+    <!-- linked JavaScript files -->
+    <script src="saveText.js"></script>
+    <script src="readTextArea.js"></script>
+    <script src="script.js">  </script>
 </html>
