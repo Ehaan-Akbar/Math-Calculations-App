@@ -1,0 +1,145 @@
+:root {
+    --color-background: #cee7ff;
+    --color-text: #121a34;
+    --color-button: #93acff; 
+    --color-button-hover: #7b94e6;
+    --color-operator: #597eff;
+    --color-operator-hover: #4063df;
+    --color-display-bg: #ffffff;
+    --color-shadow: rgba(18, 26, 52, 0.15);
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calculator, .panel {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px var(--color-shadow);
+    width: 320px;
+    box-sizing: border-box;
+}
+
+h3 {
+    color: var(--color-text);
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#display, .text-input, .file-textarea {
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-display-bg);
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.file-textarea {
+    height: 80px;
+    font-size: 1rem;
+    text-align: left;
+    resize: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.panel-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--color-button);
+    color: var(--color-text);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.operator {
+    background-color: var(--color-operator);
+    color: var(--color-button);
+}
+
+button.operator:hover {
+    background-color: var(--color-operator-hover);
+}
+
+button.clear {
+    background-color: var(--color-button);
+    color: var(--color-text);
+}
+
+button.clear:hover {
+    background-color: var(--color-operator-hover);
+}
+
+button.equal {
+    background-color: var(--color-operator);
+    color: var(--color-button);
+    grid-column: span 2;
+}
+
+button.equal:hover {
+    background-color: var(--color-operator-hover);
+}
+
+button.zero {
+    grid-column: span 2;
+}
+
+.message-box {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
