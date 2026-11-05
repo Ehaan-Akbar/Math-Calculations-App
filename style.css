@@ -24,7 +24,6 @@ body {
 .container {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -127,9 +126,6 @@ button.equal:hover {
     background-color: var(--color-operator-hover);
 }
 
-button.zero {
-    grid-column: span 2;
-}
 
 .message-box {
     font-size: 0.9rem;
