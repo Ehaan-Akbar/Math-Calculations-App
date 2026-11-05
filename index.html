@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Function Calculator & Statistics Tool</title>
+    <title> calc: short for calculator </title>
     <!-- Linked external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <h1> calc (short for calculator) </h1>
     <div class="container">
         <!-- 1. Standard Calculator Panel -->
         <div class="calculator">
-            <h3>Standard Calculator</h3>
+            <h3>Standard calc </h3>
             <input type="text" id="display">
             <div class="buttons">
                 <button onclick="appendValue('0')">0</button>
@@ -39,7 +39,7 @@
 
         <!-- 2. Advanced Math & Text Input Panel -->
         <div class="panel">
-            <h3>Math Class Operations</h3>
+            <h3>Math class calculations</h3>
             <input type="text" id="mathInput" class="text-input" placeholder="ex, 5 or 4,3">
             <div class="panel-buttons">
                 <button class="operator" onclick="runMathOperation('round')">Round</button>
@@ -52,7 +52,7 @@
 
         <!-- file Upload & stat calculations panel -->
         <div class="panel">
-            <h3>Statistics (File Upload)</h3>
+            <h3>Statistics & file upload </h3>
             <input type="file" id="fileToLoad" onchange="checkFileProperty()">
             <div id="Message" class="message-box">Select a CSV/text file...</div>
             <textarea id="fileInput" class="file-textarea" placeholder="Data loaded here..."></textarea>
