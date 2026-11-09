@@ -66,8 +66,24 @@
         </div>
     </div>
 
+    <!-- 3. Graphing Panel -->
+    <div class = "graphing-panel">
+        <input id="graphInput" aria-label="Graph 1 (red)" value="sin(x)" placeholder="Graph 1 (red)" style="color: red">
+        <input id="graphInput2" aria-label="Graph 2 (blue)" placeholder="Graph 2 (blue)" style="color: blue">
+        <input id="graphInput3" aria-label="Graph 3 (green)" placeholder="Graph 3 (green)" style="color: green">
+        <button onclick="drawGraph()">Graph</button>
+        <button onclick="zoom = Math.min(32, zoom*2); drawGraph()">Zoom in</button>
+        <button onclick="zoom = Math.max(0.125, zoom/2); drawGraph()">Zoom out</button>
+        <button onclick="centerX -= 1/zoom; drawGraph()">Left</button>
+        <button onclick="centerX += 1/zoom; drawGraph()">Right</button>
+        <button onclick="centerY += 1/zoom; drawGraph()">Up</button>
+        <button onclick="centerY -= 1/zoom; drawGraph()">Down</button>
+    </div>
+    <canvas id="canvas"></canvas>
     <!-- linked JavaScript files -->
     <script src="saveText.js"></script>
     <script src="readTextArea.js"></script>
     <script src="script.js">  </script>
+    <script src="script2.js"></script>
+</body>
 </html>
